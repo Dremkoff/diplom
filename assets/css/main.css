@@ -3,6 +3,7 @@ body,
 #main {
   margin: 0;
   padding: 0;
+  min-height: 100vh;
 }
 
 a {
@@ -18,19 +19,17 @@ a {
 /* SIDEBAR */
 
 #sidebar {
-  height: -webkit-fill-available;
+  width: 295.5px;
   background: linear-gradient(135deg, rgba(203, 96, 179, 1) 0%, rgba(86, 61, 124, 1) 100%);
   font-size: 0.9em;
   box-shadow: 0 0 5em 0 rgba(0, 0, 0, 0.175);
   position: relative;
-  transition: all .5s ease-in-out;
+  transition: all .5s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 
 #sidebar.hide {
   margin-left: -295.5px;
 }
-
-#sidebar .inner {}
 
 #sidebar>.inner>* {
   border-bottom: solid 2px rgba(255, 255, 255, 0.5);
@@ -197,7 +196,24 @@ a {
 
 @media all and (max-width: 768px) {
   #sidebar {
+    height: 100%;
     position: fixed;
     z-index: 999;
+  }
+  #sidebar .inner {
+    width: max-content;
+    height: 100%;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    top: 0;
+  }
+  .fa-bars {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 1.5em;
+    background: #eeeeeeaa;
   }
 }

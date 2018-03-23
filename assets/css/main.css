@@ -163,11 +163,24 @@ a {
   text-decoration: none;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   position: relative;
+  padding-right: 15px;
 }
 
-#menu ul .opener .fa {
+#menu ul a.opener svg,
+#menu ul span.opener svg {
   position: absolute;
   right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  transition: .2s transform ease-in-out;
+}
+
+#menu ul a.opener.collapsed svg,
+#menu ul span.opener.collapsed svg {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* MENU END */

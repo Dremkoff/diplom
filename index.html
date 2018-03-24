@@ -24,15 +24,21 @@
 
         <section id="profile">
           <div class="align-items-center justify-content-between row text-center">
-            <div class="avatar col" style="font-size: 3em;">
+            <div class="avatar col-4 pr-0">
               <!-- <i class="fas fa-user"></i> -->
-              <img src="images/avatar.svg" alt="">
+              <img id="img_icon" src="images/avatar.svg" alt="">
             </div>
-            <div class="login col">
-              <div>CEKTAHT</div>
-            </div>
-            <div class="exit col">
-              <button class="btn btn-dark btn-sm px-3">EXIT</button>
+            <div class="col-8">
+              <div class="row">
+                <div class="col-12 login text-right">
+                  <div>
+                    CEKTAHT
+                  </div>
+                </div>
+                <div class="btn col-12 exit text-right">
+                  <a href="logout.php" class="btn btn-dark btn-sm px-3">Выйти</a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -44,7 +50,7 @@
           </header> -->
           <ul>
             <li>
-              <a href="index.html">Главная</a>
+              <a href="#">Главная</a>
             </li>
             <li>
               <a href="#">Тесты</a>

@@ -19,7 +19,7 @@ a {
 /* SIDEBAR */
 
 #sidebar {
-  width: 295.5px;
+  width: 270px;
   background: linear-gradient(135deg, rgba(203, 96, 179, 1) 0%, rgba(86, 61, 124, 1) 100%);
   font-size: 0.9em;
   box-shadow: 0 0 5em 0 rgba(0, 0, 0, 0.175);
@@ -28,7 +28,7 @@ a {
 }
 
 #sidebar.hide {
-  margin-left: -295.5px;
+  margin-left: -270px;
 }
 
 #sidebar>.inner>* {
@@ -81,10 +81,12 @@ a {
 }
 
 #profile .avatar img {
-  width: 64px;
   border-radius: 50%;
   border: 3px solid #333;
   background: rgba(255, 255, 255, 0.25);
+  object-fit: cover;
+  width: 75px;
+  height: 75px;
 }
 
 /* PROFILE END */
@@ -166,21 +168,22 @@ a {
   padding-right: 15px;
 }
 
-#menu ul a.opener svg,
-#menu ul span.opener svg {
+#menu ul a.opener[aria-expanded="false"] svg,
+#menu ul span.opener[aria-expanded="false"] svg {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: .2s transform ease-in-out;
+}
+
+#menu ul a.opener[aria-expanded="true"] svg,
+#menu ul span.opener[aria-expanded="true"] svg {
   position: absolute;
   right: 0;
   top: 50%;
   transform: translateY(-50%) rotate(180deg);
   transition: .2s transform ease-in-out;
-}
-
-#menu ul a.opener.collapsed svg,
-#menu ul span.opener.collapsed svg {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 /* MENU END */
@@ -214,7 +217,6 @@ a {
     z-index: 999;
   }
   #sidebar .inner {
-    width: max-content;
     height: 100%;
     left: 0;
     overflow-x: hidden;
